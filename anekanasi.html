@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Canteen</title>
+        <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        
+        <style>
+            body {
+                background-color: #f5f5f5;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <div class="container">
+            <a href="index.html#index" style="color: #4CAF50;"><img src="logo e-canteen.png" alt="logo e-canteen" class="logo"></a>
+
+            <ul class="nav">
+                <li><a href="index.html#index" style="color: #4CAF50;">index</a></li>|
+                <li><a href="index.html#bestseller">Best Seller</a></li>|
+                <li><a href="index.html#category">Category</a></li>|
+                <li><a href="index.html#booth">Order</a></li>|
+                <li><a href="index.html#about">About Us</a></li>
+            </ul>
+
+            <div class="cart">
+                <a href="keranjang.html">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2169/2169842.png" alt="keranjang" style="width: 30px;">
+                </a>
+            </div>
+
+            <div class="user">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile">
+            </div>
+        </div>
+        
+        <!-- Menu Section -->
+        <div class="menu-container">
+            <div>
+                <h1 class="menu-nav"> ANEKA NASI </h1>
+                <hr style="width: 5%; color: #01a465; border: 2px solid; text-align: end;">
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Nasi Goreng Ayam')">
+                <img src="https://www.masakapahariini.com/wp-content/uploads/2020/02/kumpulan-resep-nasi-goreng.jpg" alt="Nasi Goreng Ayam">
+                <div class="menu-info">
+                    <h3>Nasi Goreng Ayam</h3>
+                    <p>Kantin Bu Ghin, Gedung Kantin A, Nomor 2</p>
+                    <span class="price">Rp. 15.000</span>
+                </div>
+            </div>
+            
+            <div class="menu-item" onclick="showAlert('Nasi Ayam Geprek')">
+                <img src="https://th.bing.com/th/id/OIP.OZioSbb72LrmbAPk0-JqvwHaE8?rs=1&pid=ImgDetMain" alt="Nasi Ayam Geprek">
+                <div class="menu-info">
+                    <h3>Nasi Ayam Geprek</h3>
+                    <p>Kantin Cindy, Gedung Kantin A no 5</p>
+                    <span class="price">Rp. 17.000</span>
+                </div>
+            </div>
+            
+            <div class="menu-item" onclick="showAlert('Nasi Goreng Kambing')">
+                <img src="https://i0.wp.com/rasabunda.com/wp-content/uploads/2021/08/Nasi-Goreng-Kambing.jpg?fit=450%2C600&ssl=1" alt="Nasi Goreng Kambing">
+                <div class="menu-info">
+                    <h3>Nasi Goreng Kambing</h3>
+                    <p>Kantin Bu Ghin, Gedung Kantin A, Nomor 2</p>
+                    <span class="price">Rp. 15.000</span>
+                </div>
+            </div>
+            
+            <div class="menu-item" onclick="showAlert('Nasi Uduk')">
+                <img src="https://th.bing.com/th/id/OIP.d7E7CTAZMtlrowBFeWsNOQHaHa?rs=1&pid=ImgDetMain" alt="Nasi Uduk">
+                <div class="menu-info">
+                    <h3>Nasi Uduk</h3>
+                    <p>Kantin Cindy, Gedung Kantin A no 5</p>
+                    <span class="price">Rp. 10.000</span>
+                </div>
+            </div>
+            
+            <div class="menu-item" onclick="showAlert('Nasi Kuning')">
+                <img src="https://i1.wp.com/blog.duniamasak.com/wp-content/uploads/nasi-kuning.jpg?fit=900%2C520" alt="Nasi Kuning">
+                <div class="menu-info">
+                    <h3>Nasi Kuning</h3>
+                    <p>Kantin Cindy, Gedung Kantin A no 5</p>
+                    <span class="price">Rp. 12.000</span>
+                </div>
+            </div>
+        </div>
+            
+        <!-- Footer -->
+        <footer>
+            <br>
+            <div class="footer-content">
+                <div class="footer-social">
+                <a href="#" class="social-icon"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="bx bxl-whatsapp"></i></a>
+                </div>
+                <div class="footer-text">
+                <p>&copy; E-Canteen 2024 | All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

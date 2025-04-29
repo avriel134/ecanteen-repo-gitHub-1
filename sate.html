@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Canteen</title>
+        <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        
+        <style>
+            body {
+                background-color: #f5f5f5;
+            }
+        </style>
+    </head>
+
+    <body>
+        <script>
+            // Fungsi untuk menampilkan alert saat menu diklik
+            function showAlert(menu) {
+            alert('Anda memilih: ' + menu);
+            }
+        </script>
+
+        <!-- Header -->
+        <div class="container">
+            <a href="index.html#index" style="color: #4CAF50;"><img src="logo e-canteen.png" alt="logo e-canteen" class="logo"></a>
+
+            <ul class="nav">
+                <li><a href="index.html#index" style="color: #4CAF50;">index</a></li>|
+                <li><a href="index.html#bestseller">Best Seller</a></li>|
+                <li><a href="index.html#category">Category</a></li>|
+                <li><a href="index.html#booth">Order</a></li>|
+                <li><a href="index.html#about">About Us</a></li>
+            </ul>
+
+            <div class="cart">
+                <a href="keranjang.html">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2169/2169842.png" alt="keranjang" style="width: 30px;">
+                </a>
+            </div>
+
+            <div class="user">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile">
+            </div>
+        </div>
+        
+        <!-- Menu Section -->
+        <div class="menu-container">
+            <div>
+                <h1 class="menu-nav"> SATE </h1>
+                <hr style="width: 5%; color: #01a465; border: 2px solid; text-align: end;">
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Sate Ayam')">
+                <img src="https://th.bing.com/th/id/R.1b1bac24da2e512ae51d399ae136d5a2?rik=DdpC7LmVVVQvww&riu=http%3a%2f%2f3.bp.blogspot.com%2f-2Uuj_uBhH3M%2fUJ4SBVZW8rI%2fAAAAAAAAABU%2fJSOtnVABBow%2fs1600%2fSate%2bAyam%2bMadura%2bRecipes.jpeg&ehk=lA8lS4LlI3%2fhcYnSG%2br8seKZ8J7mKdkY5hxfjKUb9zI%3d&risl=&pid=ImgRaw&r=0" alt="Sate Ayam">
+                <div class="menu-info">
+                    <h3>Sate Ayam</h3>
+                    <p>Kantin Bu Ghin, Gedung Kantin A, Nomor 2</p>
+                    <span class="price">Rp. 15.000</span>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Sate Kambing')">
+                <img src="https://asset.kompas.com/crops/HuNLVm3mV-wvf-vrQzxIzzbVkxA=/34x5:1000x648/750x500/data/photo/2022/07/10/62ca32d62f8ba.jpg" alt="Sate Kambing">
+                <div class="menu-info">
+                    <h3>Sate Kambing</h3>
+                    <p>Kantin Cindy, Gedung Kantin A no 5</p>
+                    <span class="price">Rp. 17.000</span>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Sate Padang')">
+                <img src="https://balitraveldiary.com/wp-content/uploads/2020/01/Sate-Padang-Syukur-1024x1024.jpg" alt="Sate Padang">
+                <div class="menu-info">
+                    <h3>Sate Padang</h3>
+                    <p>Kantin Bu Ghin, Gedung Kantin A, Nomor 2</p>
+                    <span class="price">Rp. 15.000</span>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Sate Taichan')">
+                <img src="https://www.masakapahariini.com/wp-content/uploads/2019/01/sate-taichan-6.jpg" alt="Sate Taichan">
+                <div class="menu-info">
+                    <h3>Sate Taichan</h3>
+                    <p>Kantin Cindy, Gedung Kantin A no 5</p>
+                    <span class="price">Rp. 10.000</span>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Sate Maranggi')">
+                <img src="https://4.bp.blogspot.com/-hhakiN_ciY4/V1nOPr2JdfI/AAAAAAAAAGs/RrcC0Is5T40-JPXp03ndUJ1guE9lvihGwCLcB/s1600/sate%2Bmaranggi.jpg" alt="Sate Maranggi">
+                <div class="menu-info">
+                    <h3>Sate Maranggi</h3>
+                    <p>Kantin Cindy, Gedung Kantin A no 5</p>
+                    <span class="price">Rp. 12.000</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="bx bxl-whatsapp"></i></a>
+            </div>
+            <div class="footer-text">
+                <p>&copy; E-Canteen 2024 | All Rights Reserved</p>
+            </div>
+            </div>
+        </footer>
+    </body>
+</html>

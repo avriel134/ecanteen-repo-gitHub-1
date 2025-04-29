@@ -1,0 +1,152 @@
+<html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Canteen</title>
+        <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        
+        <style>
+            body {
+                background-color: #f5f5f5;
+            }
+        </style>
+    </head>
+
+    <body>
+        <script>
+        // Fungsi untuk menampilkan alert saat menu diklik
+        function showAlert(menu) {
+            alert('Anda memilih : ' + menu);
+        }
+        </script>
+        
+        <!-- Header -->
+        <div class="container">
+            <a href="index.html#index" style="color: #4CAF50;"><img src="logo e-canteen.png" alt="logo e-canteen" class="logo"></a>
+
+            <ul class="nav">
+                <li><a href="index.html#index" style="color: #4CAF50;">index</a></li>|
+                <li><a href="index.html#bestseller">Best Seller</a></li>|
+                <li><a href="index.html#category">Category</a></li>|
+                <li><a href="index.html#booth">Order</a></li>|
+                <li><a href="index.html#about">About Us</a></li>
+            </ul>
+
+            <div class="cart">
+                <a href="keranjang.html">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2169/2169842.png" alt="keranjang" style="width: 30px;">
+                </a>
+            </div>
+
+            <div class="user">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile">
+            </div>
+        </div>
+
+        <!-- Menu Section -->
+        <div class="menu-container">
+        <div>
+            <h1 class="menu-nav"> POP ICE </h1>
+            <hr style="width: 5%; color: #01a465; border: 2px solid; text-align: end;">
+        </div>
+
+        <div class="menu-item" onclick="showAlert('Pop Ice Chocolate')">
+            <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//106/MTA-92486275/brd-44261_pop-ice-chocolate-sachet-25gr_full01.jpg" alt="Pop Ice Cocholate">
+            <div class="menu-info">
+                <h3>Pop Ice Chocolate</h3>
+                <p>Kantin Cindy - Gedung Kantin A, Nomor 2</p>
+                <span class="price">Rp. 5.000</span>
+            </div>
+        </div>
+
+        <div class="menu-item" onclick="showAlert('Pop Ice Bubble Gum')">
+            <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//103/MTA-20675892/pop_ice_pop_ice_permen_karet_renceng_10sachet_full01_m32tem99.jpg" alt="Pop Ice Bubble Gum">
+            <div class="menu-info">
+                <h3>Pop Ice Bubble Gum</h3>
+                <p>Kantin Ara - Gedung Kantin B, Nomor 5</p>
+                <span class="price">Rp. 4.000</span>
+            </div>
+        </div>
+
+        <div class="menu-item" onclick="showAlert('Pop Ice Lychee')">
+            <img src="https://www.idh.id/thumbs/f4xw2ylomftwk4ronfsgqltjmqxxk4dmn5qwi4zpmruxg5dsnfrhk5dpoixtcnzwgiydaojwgaxxa4tpmr2wg5bpge4dmnjzge3daojpmrtdezktjj4vs5dro5rum2kvjexgu4dh/f4xw2ylomftwk4ronfsgqltjmqxxk4dmn5qwi4zpmruxg5dsnfrhk5dpoixtcnzwgiydaojwgaxxa4tpmr2wg5bpge4dmnjzge3daojpmrtdezktjj4vs5dro5rum2kvjexgu4dhh53t2nrqgatgqpjwgaya-.jpg" alt="Pop Ice Lychee">
+            <div class="menu-info">
+                <h3>Pop Ice Lychee</h3>
+                <p>Kantin Cindy - Gedung Kantin A, Nomor 2</p>
+                <span class="price">Rp. 4.500</span>
+            </div>
+        </div>
+
+        <div class="menu-item" onclick="showAlert('Pop Ice Taro')">
+            <img src="https://down-id.img.susercontent.com/file/688d63669be2cb9ea0fe60fc969488f9" alt="Pop Ice Taro">
+            <div class="menu-info">
+                <h3>Pop Ice Taro</h3>
+                <p>Kantin Bu'de - Gedung Kantin B, Nomor 2</p>
+                <span class="price">Rp. 5.000</span>
+            </div>
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Pop Ice Uyu Matcha')">
+            <img src="https://www.idh.id/thumbs/f4xw2ylomftwk4ronfsgqltjmqxxk4dmn5qwi4zpmruxg5dsnfrhk5dpoixtmmjqgy3dqnzwg4xxa4tpmr2wg5bpge2demrwheytsmbrf5rumvtrnjjhi2btovfwct2egbvc42tqm4-/f4xw2ylomftwk4ronfsgqltjmqxxk4dmn5qwi4zpmruxg5dsnfrhk5dpoixtmmjqgy3dqnzwg4xxa4tpmr2wg5bpge2demrwheytsmbrf5rumvtrnjjhi2btovfwct2egbvc42tqm47xopjwgaycm2b5gyyda-.jpg" alt="Pop Ice Uyu Matcha">
+            <div class="menu-info">
+                <h3>Pop Ice Uyu Matcha</h3>
+                <p>Kantin Bu'de - Gedung Kantin B, Nomor 2</p>
+                <span class="price">Rp. 5.000</span>
+            </div>
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Pop Ice Cookies and Cream')">
+            <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/106/MTA-176486028/pop_ice_pop_ice_sultan_-_milk_shake_powder_-_paket_5_sachet_full05_buulxxz9.jpg" alt="Pop Ice Cookies and Cream">
+            <div class="menu-info">
+                <h3>Pop Ice Cookies and Cream</h3>
+                <p>Kantin Pak Tris - Gedung Kantin A, Nomor 3</p>
+                <span class="price">Rp. 6.000</span>
+            </div>
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Pop Ice Cappucino')">
+            <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//102/MTA-15375567/pop_ice_pop_ice_-_milk_shake_powder_rasa_cappuccino_-_paket_5_sachet_full02_bb1jbsje.jpg" alt="Pop Ice Cappucino">
+            <div class="menu-info">
+                <h3>Pop Ice Cappucino</h3>
+                <p>Kantin Pak Tris - Gedung Kantin A, Nomor 3</p>
+                <span class="price">Rp. 5.000</span>
+            </div>
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Pop Ice Active Thunder Choco Malt')">
+            <img src="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2023/11/8/6fcac01c-05b0-4283-bed4-40e88aaaefd6.jpg" alt="Pop Ice Thunder Choco Malt">
+            <div class="menu-info">
+                <h3>Pop Ice Thunder Choco Malt</h3>
+                <p>Kantin Ara - Gedung Kantin B, Nomor 5</p>
+                <span class="price">Rp. 5.000</span>
+            </div>
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Pop Ice Choco Cheese')">
+            <img src="https://www.idh.id/thumbs/f4xw2ylomftwk4ronfsgqltjmqxxk4dmn5qwi4zpmruxg5dsnfrhk5dpoixtgmbvgiytsmjyf5yhe33eovrxilzugqytiojrgyyc632ennzxsvddobawewkdgnhfe4jonjygo-/f4xw2ylomftwk4ronfsgqltjmqxxk4dmn5qwi4zpmruxg5dsnfrhk5dpoixtgmbvgiytsmjyf5yhe33eovrxilzugqytiojrgyyc632ennzxsvddobawewkdgnhfe4jonjygop3xhu3dambgna6tmmbq.jpg" alt="Pop Ice Choco Cheese">
+            <div class="menu-info">
+                <h3>Pop Ice Choco Cheese</h3>
+                <p>Kantin Bu Ghin - Gedung Kantin A, Nomor 2</p>
+                <span class="price">Rp.6.000</span>
+            </div>
+            </div>
+
+        </div>
+        <!-- Footer -->
+        <footer>
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="bx bxl-whatsapp"></i></a>
+            </div>
+            <div class="footer-text">
+                <p>&copy; E-Canteen 2024 | All Rights Reserved</p>
+            </div>
+        </div>
+        </footer>
+    </body>
+</html>

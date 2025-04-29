@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Canteen</title>
+        <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body {
+            background-color: #f5f5f5;
+        }
+        </style>
+    </head>
+
+    <body>
+    <script>
+        // Fungsi untuk menampilkan alert saat menu diklik
+        function showAlert(menu) {
+        alert('Anda memilih: ' + menu);
+        }
+    </script>
+    
+    <!-- Header -->
+    <div class="container">
+        <a href="index.html#index" style="color: #4CAF50;"><img src="logo e-canteen.png" alt="logo e-canteen" class="logo"></a>
+    
+        <ul class="nav">
+            <li><a href="index.html#index" style="color: #4CAF50;">index</a></li>|
+            <li><a href="index.html#bestseller">Best Seller</a></li>|
+            <li><a href="index.html#category">Category</a></li>|
+            <li><a href="index.html#booth">Order</a></li>|
+            <li><a href="index.html#about">About Us</a></li>
+        </ul>
+    
+        <div class="cart">
+            <a href="keranjang.html">
+                <img src="https://cdn-icons-png.flaticon.com/128/2169/2169842.png" alt="keranjang" style="width: 30px;">
+            </a>
+        </div>
+    
+        <div class="user">
+            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile">
+        </div>
+    </div>
+    
+    <!-- Menu Section -->
+    <div class="menu-container">
+        <div>
+            <h1 class="menu-nav"> COFFEE </h1>
+            <hr style="width: 5%; color: #01a465; border: 2px solid; text-align: end;">
+        </div>
+
+        <div class="menu-item" onclick="showAlert('Macchiato')">
+            <img src="https://roastercoffees.com/wp-content/uploads/2021/05/Espresso-Macchiato-Recipe.webp" alt="Macchiato">
+            <div class="menu-info">
+                <h3>Macchiato</h3>
+                <p>Kantin Bu'de, Gedung Kantin A, Nomor 2</p>
+                <span class="price">Rp. 15.000</span>
+            </div>
+        </div>
+    
+        <div class="menu-item" onclick="showAlert('Americano')">
+            <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//98/MTA-54187613/freshly_baked_by_origin_bakery_americano_full02_kd07blpv.jpg" alt="Americano">
+            <div class="menu-info">
+                <h3>Americano</h3>
+                <p>Kantin Cindy, Gedung Kantin B no 5</p>
+                <span class="price">Rp. 12.000</span>
+            </div>
+        </div>
+    
+        <div class="menu-item" onclick="showAlert('Kopi Susu')">
+            <img src="https://siroca.co.id/wp-content/uploads/2023/08/cappuccino-6996425_1280.jpg.webp" alt="Kopi Susu">
+            <div class="menu-info">
+                <h3>Kopi Susu</h3>
+                <p>Kantin Pak Tris, Gedung Kantin A, Nomor 2</p>
+                <span class="price">Rp. 15.000</span>
+            </div>
+        </div>
+    
+        <div class="menu-item" onclick="showAlert('Affogato')">
+            <img src="https://d1r9hss9q19p18.cloudfront.net/uploads/2017/03/affogato_1280x720-sumber-.jpg" alt="Affogato">
+            <div class="menu-info">
+                <h3>Affogato</h3>
+                <p>Kantin Cindy, Gedung Kantin B no 2</p>
+                <span class="price">Rp. 19.000</span>
+            </div>
+        </div>
+    
+        <div class="menu-item" onclick="showAlert('Cappucino')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE55ZIrMBNiVuDG386CsA3QPIZUDKYD63b3Q&s" alt="Cappucino">
+            <div class="menu-info">
+                <h3>Cappucino</h3>
+                <p>Kantin Bu'de, Gedung Kantin B no 2</p>
+                <span class="price">Rp. 15.000</span>
+            </div>
+        </div>
+    
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-social">
+            <a href="#" class="social-icon"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="bx bxl-whatsapp"></i></a>
+            </div>
+            <div class="footer-text">
+            <p>&copy; E-Canteen 2024 | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    </body>
+</html>

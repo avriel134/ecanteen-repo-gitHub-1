@@ -1,0 +1,117 @@
+<html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Canteen</title>
+        <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        
+        <style>
+            body {
+                background-color: #f5f5f5;
+            }
+        </style>
+    </head>
+
+    <body>
+        <script>
+            // Fungsi untuk menampilkan alert saat menu diklik
+            function showAlert(menu) {
+            alert('Anda memilih: ' + menu);
+            }
+        </script>
+        
+        <!-- Header -->
+        <div class="container">
+            <a href="index.html#index" style="color: #4CAF50;"><img src="logo e-canteen.png" alt="logo e-canteen" class="logo"></a>
+
+            <ul class="nav">
+                <li><a href="index.html#index" style="color: #4CAF50;">index</a></li>|
+                <li><a href="index.html#bestseller">Best Seller</a></li>|
+                <li><a href="index.html#category">Category</a></li>|
+                <li><a href="index.html#booth">Order</a></li>|
+                <li><a href="index.html#about">About Us</a></li>
+            </ul>
+
+            <div class="cart">
+                <a href="keranjang.html">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2169/2169842.png" alt="keranjang" style="width: 30px;">
+                </a>
+            </div>
+
+            <div class="user">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile">
+            </div>
+        </div>
+        
+        <!-- Menu Section -->
+        <div class="menu-container">
+            <div>
+                <h1 class="menu-nav"> ANEKA JUS </h1>
+                <hr style="width: 5%; color: #01a465; border: 2px solid; text-align: end;">
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Jus Jeruk')">
+                <img src="https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/11/21085338/ini-cara-mudah-membuat-jus-jeruk-segar-dan-kaya-nutrisi-halodoc.jpg.webp" alt="Jus Jeruk">
+                <div class="menu-info">
+                    <h3>Jus Jeruk</h3>
+                    <p>Kantin Ara, Gedung Kantin A, Nomor 2</p>
+                    <span class="price">Rp. 10.000</span>
+                </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Jus Mangga')">
+                <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/100/MTA-137614375/no_brand_jus_buah_mangga_450_ml-_16oz_full00_AB10E08D-B7EF-47F0-8089-F87379F272B4.jpg" alt="Jus Mangga">
+                <div class="menu-info">
+                    <h3>Jus Mangga</h3>
+                    <p>Kantin Bu'de, Gedung Kantin B no 5</p>
+                    <span class="price">Rp. 12.000</span>
+                </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Jus Alpukat')">
+                <img src="https://cdn.idntimes.com/content-images/post/20200513/80804982-1633679013439729-4856995162210626944-n-e76c8100d5dd1d2e835cbc2edf086597.jpg" alt="Jus Alpukat">
+                <div class="menu-info">
+                    <h3>Jus Alpukat</h3>
+                    <p>Kantin Pak Tris, Gedung Kantin A, Nomor 2</p>
+                    <span class="price">Rp. 12.000</span>
+                </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Jus Jambu')">
+                <img src="https://www.buavita.co.id/images/article/guava_juice.jpg" alt="Jus Jambu">
+                <div class="menu-info">
+                    <h3>Jus Jambu</h3>
+                    <p>Kantin Bu'de, Gedung Kantin B no 2</p>
+                    <span class="price">Rp. 10.000</span>
+                </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Jus Wortel')">
+                <img src="https://cdn1-production-images-kly.akamaized.net/FQPS621VTxZIGFYKcUt4wtnGqCE=/1200x675/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2752863/original/094017800_1552720181-foto_HL_wortel.jpg" alt="Jus Wortel">
+                <div class="menu-info">
+                    <h3>Jus Wortel</h3>
+                    <p>Kantin Bu'de, Gedung Kantin B no 2</p>
+                    <span class="price">Rp. 11.000</span>
+                </div>
+            </div>
+        
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-social">
+                <a href="#" class="social-icon"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="bx bxl-whatsapp"></i></a>
+                </div>
+                <div class="footer-text">
+                <p>&copy; E-Canteen 2024 | All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

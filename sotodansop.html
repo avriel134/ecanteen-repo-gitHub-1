@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Canteen</title>
+        <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        
+        <style>
+            body {
+                background-color: #f5f5f5;
+            }
+        </style>
+    </head>
+
+    <body>
+        <script>
+            // Fungsi untuk menampilkan alert saat menu diklik
+            function showAlert(menu) {
+            alert('Anda memilih: ' + menu);
+            }
+        </script>
+
+        <!-- Header -->
+        <div class="container">
+            <a href="index.html#index" style="color: #4CAF50;"><img src="logo e-canteen.png" alt="logo e-canteen" class="logo"></a>
+
+            <ul class="nav">
+                <li><a href="index.html#index" style="color: #4CAF50;">index</a></li>|
+                <li><a href="index.html#bestseller">Best Seller</a></li>|
+                <li><a href="index.html#category">Category</a></li>|
+                <li><a href="index.html#booth">Order</a></li>|
+                <li><a href="index.html#about">About Us</a></li>
+            </ul>
+
+            <div class="cart">
+                <a href="keranjang.html">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2169/2169842.png" alt="keranjang" style="width: 30px;">
+                </a>
+            </div>
+
+            <div class="user">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile">
+            </div>
+        </div>
+        
+        <!-- Menu Section -->
+        <div class="menu-container">
+            <div>
+                <h1 class="menu-nav"> SOTO DAN SOP </h1>
+                <hr style="width: 5%; color: #01a465; border: 2px solid; text-align: end;">
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Soto Ayam')">
+            <img src="https://static.promediateknologi.id/crop/5x171:1079x1747/750x500/webp/photo/p1/1005/2024/01/06/Screenshot_20240106_071239_Instagram-2591022563.jpg" alt="Soto Ayam" class="menu-image">
+            <div class="menu-info">
+                <h3>Soto Ayam</h3>
+                <p>Kantin Pak Tris, Gedung Kantin A, Nomor 3</p>
+                <span class="price">Rp. 12.000</span>
+            </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Soto Mie')">
+            <img src="https://awsimages.detik.net.id/community/media/visual/2020/11/02/soto-mie-khas-bogor.jpeg?w=600&q=90" alt="Soto Mie" class="menu-image">
+            <div class="menu-info">
+                <h3>Soto Mie</h3>
+                <p>Kantin Pak Tris, Gedung Kantin A, Nomor 3</p>
+                <span class="price">Rp. 15.000</span>
+            </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Soto Daging')">
+            <img src="https://asset.kompas.com/crops/NL72AeWkj8VecDcb33N8bpUHv30=/3x0:700x465/750x500/data/photo/2020/12/09/5fd0afbe4cf02.jpg" alt="Soto Daging">
+            <div class="menu-info">
+                <h3>Soto Daging</h3>
+                <p>Kantin Pak Tris, Gedung Kantin A, Nomor 3</p>
+                <span class="price">Rp. 17.000</span>
+            </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Soto Betawi')">
+            <img src="https://www.sasa.co.id/medias/page_medias/Screen_Shot_2022-06-10_at_16_39_26.png" alt="Soto Betawi">
+            <div class="menu-info">
+                <h3>Soto Betawi</h3>
+                <p>Kantin Pak Tris, Gedung Kantin A, Nomor 3</p>
+                <span class="price">Rp. 15.000</span>
+            </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Sop Ayam')">
+            <img src="https://awsimages.detik.net.id/community/media/visual/2022/06/26/resep-sup-ayam-makaroni_43.jpeg?w=1200" alt="Sop Ayam">
+            <div class="menu-info">
+                <h3>Sop Ayam</h3>
+                <p>Kantin Bu Ghin, Gedung Kantin A, Nomor 2</p>
+                <span class="price">Rp. 15.000</span>
+            </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Sop Daging')">
+            <img src="https://cdn0-production-images-kly.akamaized.net/W0Tpvv_MrTiLJRMVOkvd9OC0MHs=/0x1442:4160x3787/1200x675/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3462349/original/072942200_1621655864-shutterstock_1871033422.jpg" alt="Sop Daging">
+            <div class="menu-info">
+                <h3>Sop Daging</h3>
+                <p>Kantin Bu Ghin, Gedung Kantin A, Nomor 2</p>
+                <span class="price">Rp. 18.000</span>
+            </div>
+            </div>
+        </div>
+          
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="bx bxl-whatsapp"></i></a>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; E-Canteen 2024 | All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

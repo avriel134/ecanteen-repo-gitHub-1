@@ -1,0 +1,451 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Canteen</title>
+        <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+
+    </head> 
+    
+    <body>
+        <script type="text/javascript">
+            window.onload = function(){
+            var d = new Date();
+            var time = d.getHours();
+            var greeting = document.getElementById("greeting");
+
+            if (time < 11) {
+                greeting.innerHTML = "<b>Selamat Pagi!</b>";
+            } else if (time >= 11 && time < 15) {
+                greeting.innerHTML = "<b>Selamat Siang!</b>";
+            } else if (time >= 15 && time < 18) {
+                greeting.innerHTML = "<b>Selamat Sore!</b>";
+            } else if (time >= 18 && time < 24) {
+                greeting.innerHTML = "<b>Selamat Malam!</b>";
+            }
+
+        };
+
+        index.onclick = function (event) {
+            if (!event.target.matches(".dropbtn")) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                }
+            } 
+        };
+
+        let cart = []; // Array untuk menyimpan item yang ada di keranjang
+
+        // Fungsi untuk menangani event klik "Add to Cart"
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const item = this.getAttribute('data-item');
+                const price = this.getAttribute('data-price');
+
+                // Tambahkan item ke array cart
+                cart.push({ item: item, price: price });
+                
+                // Tampilkan jumlah item di keranjang
+                document.querySelector('.cart .item-count').textContent = cart.length;
+
+                // Simpan data cart ke localStorage agar tetap ada setelah refresh
+                localStorage.setItem('cart', JSON.stringify(cart));
+            });
+        });
+
+        // Fungsi untuk memuat keranjang dari localStorage saat halaman di-load
+        window.onload = function() {
+            const savedCart = localStorage.getItem('cart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                document.querySelector('.cart .item-count').textContent = cart.length;
+            }
+        };
+        </script>
+    
+    <!--<div class="container">
+        <ul class="nav">
+            <table style="width: 100%; text-align: center;">
+                <tr>
+                    <td><a href="#index" style="color: #4CAF50;"><img src="logo e-canteen.png" alt="logo e-canteen" class="logo"></a></td>
+                    <td style="size: 10%;"><a href="#index" style="color: #4CAF50;">index</a></td><td>|</td>
+                    <td><a href="#bestseller">Best Seller</a></td><td>|</td>
+                    <td><a href="#category">Category</a></td><td>|</td>
+                    <td><a href="#booth">Order</a></td><td>|</td>
+                    <td><a href="#about">About Us</a></td><td>|</td>
+                    <td style="size: 5%; "><a href="keranjang.html">
+                        <img src="https://cdn-icons-png.flaticon.com/128/2169/2169842.png" alt="keranjang" style="width: 30px;"></a></td>
+                    <td style="size: 5%;"><img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile" style="width: 30px;"></td>
+                </tr>
+            </table>
+        </ul>
+    </div>-->
+
+    <div class="container">
+        <a href="#index" style="color: #4CAF50;"><img src="logo e-canteen.png" alt="logo e-canteen" class="logo"></a>
+
+        <ul class="nav">
+            <li><a href="#index" style="color: #4CAF50;">index</a></li>|
+            <li><a href="#bestseller">Best Seller</a></li>|
+            <li><a href="#category">Category</a></li>|
+            <li><a href="#booth">Order</a></li>|
+            <li><a href="#about">About Us</a></li>
+        </ul>
+
+        <div class="cart">
+            <a href="keranjang.html">
+                <img src="https://cdn-icons-png.flaticon.com/128/2169/2169842.png" alt="keranjang" style="width: 30px;">
+                <!-- <span class="item-count"> 0 </span> -->
+            </a>
+        </div>
+
+        <div class="user">
+            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile">
+        </div>
+    </div>
+
+        <!-- Bagian index -->
+        <table border="0">
+            <article id="index" style="padding-top: 60px;">
+                <tr>
+                    <td style="padding-left: 0">
+                            <img src="logo UPN.png" alt="logo upn" style="width: 100%;">
+                    </td>
+                    <td>
+                        <div style="text-align: right; width: 100%;"> 
+                            <h1 id="greeting" style="font-size: 60px; margin-right: 40px; color: #69916D"></h1>
+                            <p style="text-align: right; font-size: 25px; margin-right: 43px; color: #666;">Mau makan apa hari ini?</p>
+                        </div>
+                    </td>
+                </tr>
+            </article>
+        </table>   
+        
+        <!-- Bagian Best Seller -->
+        <div id="bestseller">
+            <br>
+            <h1 class="menu-nav"> Menu Best Seller </h1>
+            <hr style="width: 5%; color: #01a465; border: 2px solid; padding-top: 0;">
+        </div>
+        <article>
+            <div class="best-seller">
+                <div class="booth-container">
+                    <!-- Booth 1 -->
+                    <div class="booth-item">
+                        <img src="https://dcostseafood.id/wp-content/uploads/2021/12/Nasi-Ayam-Geprek-Sambal-Korek.jpg" alt="Booth 1">
+                        <h3>Nasi Ayam Geprek</h3>
+                        <p >Kantin Cindy</p>
+                        <button class="add-to-cart" data-item="Nasi Ayam Geprek" data-price="20000">Add to Cart</button>
+                    </div>                    
+                    <!-- Booth 2 -->
+                    <div class="booth-item">
+                        <img src="https://img.kurio.network/rE9S29CrLtZ_dW5BiVsp7RufHZw=/1200x1200/filters:quality(80)/https://kurio-img.kurioapps.com/21/11/15/2cbee642-ecd0-4f1f-9d0b-23acb574fe59.jpe" alt="Booth 2">
+                    <h3>Bakso</h3>
+                        <p>Kantin Pak Tris</p>
+                        <button class="add-to-cart" data-item="Bakso" data-price="20000">Add to Cart</button>
+                    </div>
+                    <!-- Booth 3 -->
+                    <div class="booth-item">
+                        <img src="data:image/jpeg;base64,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" alt="Booth 3">
+                        <h3>Soto Mie</h3>
+                        <p>Kantin Pak Tris</p>
+                        <button class="add-to-cart" data-item="Soto Mie" data-price="20000">Add to Cart</button>
+                    </div>
+                    <!-- Booth 4 -->
+                    <div class="booth-item">
+                        <img src="https://img-global.cpcdn.com/recipes/6e9d87777a9af1b2/400x400cq70/photo.jpg" alt="Booth 4">
+                        <h3>Nasi Ayam Katsu</h3>
+                        <p>Kantin Bu Ghin</p>
+                        <button class="add-to-cart" data-item="Nasi Ayam Katsu" data-price="20000">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+         <!-- Bagian Category -->
+        <div id="category">
+            <br>
+            <h1 class="menu-nav"> Kategori Menu </h1>
+            <hr style="width: 5%; color: #01a465; border: 2px solid; padding-top: 0;">
+        </div>
+        <!-- Category Makanan -->
+        <div>
+            <h1 style="font-size: 30px; margin-bottom: 10px; color: #333; text-align: center; padding-top: 30px; color:#4CAF50"> Kategori Makanan &#127836;</h1>
+        </div>
+        
+        <article>
+            <div class="category-section">
+                <div class="category-container">
+                    <div class="category-item">
+                        <img src="https://www.confusion-kochen.at/wp-content/uploads/2023/06/Nasi-Goreng-mit-Garnelen.jpg" alt="Aneka Nasi">
+                        <p></p>
+
+                    <a href="anekanasi.html" class="category-click-link">
+                        <button class="category-click"><b>Aneka Nasi</b></button>
+                    </a>
+
+                </div>
+            
+                <div class="category-item">
+                    <img src="https://asset.kompas.com/crops/FDAcmidsNYJDL80i55bj7pbXqyk=/95x0:939x563/750x500/data/photo/2022/07/10/62ca309364500.jpeg" alt="Sate">
+                    <p></p>
+
+                    <a href="sate.html" class="category-click-link">
+                        <button class="category-click"><b>Sate</b></button>
+                    </a>
+                </div>
+
+                <div class="category-item">
+                    <img src="https://img.kurio.network/62vRzJv6OHkcAWP-7peAScxVv5c=/1200x1200/filters:quality(80)/https://kurio-img.kurioapps.com/22/03/18/f9e900ff-e4eb-46bb-bfc8-28001e869414.jpe" alt="Mie">
+                    <p></p>
+
+                    <a href="mie.html" class="category-click-link">
+                        <button class="category-click"><b>Mie</b></button>
+                    </a>
+                </div>
+
+                <div class="category-item">
+                    <img src="https://kurio-img.kurioapps.com/21/10/12/9c41af5a-a959-44c7-80d0-9baa58034afe.jpe" alt="Soto & Sop">
+                    <p></p>
+
+                    <a href="sotodansop.html" class="category-click-link">
+                        <button class="category-click"><b>Soto & Sop</b></button>
+                    </a>
+                </div>
+
+    
+                <div class="category-item">
+                    <img src="https://asset-a.grid.id/crop/0x0:0x0/360x240/photo/2023/03/11/1343119897jpg-20230311080006.jpg" alt="Ayam & Bebek">
+                    <p></p>
+                    
+                    <!-- Use an anchor tag to redirect when clicking on the Order Now button -->
+                    <a href="AyamdanBebek.html" class="category-click-link">
+                        <button class="category-click"><b>Ayam & Bebek</b></button>
+                    </a>
+                </div>
+                
+                <!-- Category 6 -->
+                <div class="category-item">
+                    <img src="https://asset.kompas.com/crops/RwdMnMdAVlFdKOmMauQE9CJEpR4=/0x283:800x817/750x500/data/photo/2022/07/29/62e35a47c7535.jpg" alt="Snack">
+                    <p></p>
+                        
+                    <!-- Use an anchor tag to redirect when clicking on the Order Now button -->
+                    <a href="snack.html" class="category-click-link">
+                        <button class="category-click"><b>Snack</b></button>
+                    </a>
+                </div>
+
+                <!-- Category 7 -->
+                <div class="category-item">
+                    <img src="https://img-global.cpcdn.com/recipes/5fb83e7fbcfc2bd5/680x482cq70/es-kul-kul-foto-resep-utama.jpg" alt="Sweets">
+                    <p></p>
+
+                    <!-- Use an anchor tag to redirect when clicking on the Order Now button -->
+                    <a href="dessert.html" class="category-click-link">
+                        <button class="category-click"><b>Dessert</b></button>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Bagian Category Minuman -->
+        <div class="category-section">
+            <h3 style="font-size: 30px; margin-bottom: 10px; color: #333; text-align: center; padding-top: 30px; color:#4CAF50">Kategori Minuman&#129380;</h3>
+            <div class="category-container">
+                <!-- Category 1 -->
+                <div class="category-item">
+                    <img src="https://images.onlymyhealth.com/imported/images/2023/December/22_Dec_2023/fruit-juices.jpg" alt="Aneka Jus">
+                    <p></p>
+
+                <!-- Use an anchor tag to redirect when clicking on the Order Now button -->
+                <a href="anekajus.html" class="category-click-link">
+                    <button class="category-click"><b>Aneka Jus</b></button>
+                </a>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="category-item">
+                    <img src="https://th.bing.com/th/id/OIP.GOEMTSPC2AxQdhmQAwDfvgHaFd?rs=1&pid=ImgDetMain" alt="Pop Ice">
+                    <p></p>
+
+                <!-- Use an anchor tag to redirect when clicking on the Order Now button -->
+                <a href="popice.html" class="category-click-link">
+                    <button class="category-click"><b>Pop Ice</b></button>
+                </a>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="category-item">
+                    <img src="https://th.bing.com/th/id/OIP.TT5_nV5BlkeZbn9UC6RKhQAAAA?w=283&h=245&rs=1&pid=ImgDetMain" alt="Good Day">
+                    <p></p>
+
+                <!-- Use an anchor tag to redirect when clicking on the Order Now button -->
+                <a href="goodday.html" class="category-click-link">
+                    <button class="category-click"><b>Good Day</b></button>
+                </a>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="category-item">
+                    <img src="https://www.vagarights.com/wp-content/uploads/2021/08/safe-take-caffeine-pills-every-day.jpg" alt="Kopi">
+                    <p></p>
+
+                <!-- Use an anchor tag to redirect when clicking on the Order Now button -->
+                <a href="kopi.html" class="category-click-link">
+                    <button class="category-click"><b>Kopi</b></button>
+                </a>
+                </div>
+
+                <!-- Category 5 -->
+                <div class="category-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd0BRSM89bi6oQCzZ0Qs_BBBzAFg5t0trvNw&s" alt="Energen">
+                    <p></p>
+
+                <!-- Use an anchor tag to redirect when clicking on the Order Now button -->
+                <a href="energen.html" class="category-click-link">
+                    <button class="category-click"><b>Energen</b></button>
+                </a>
+                </div>
+
+                <!-- Category 6 -->
+                <div class="category-item">
+                    <img src="https://www.marketeers.com/_next/image/?url=https%3A%2F%2Fimagedelivery.net%2F2MtOYVTKaiU0CCt-BLmtWw%2Fb5a0bd97-0498-4f5c-5cdd-756829e2b600%2Fw%3D2560&w=750&q=75" alt="Nutrisari">
+                    <p></p>
+
+                <!-- Use an anchor tag to redirect when clicking on the Order Now button -->
+                <a href="nutrisari.html" class="category-click-link">
+                    <button class="category-click"><b>Nutrisari</b></button>
+                </a>
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bagian Order (Pilihan Kantin) -->
+        <div id="booth">
+            <br>
+            <h1 class="menu-nav"> Order Menu Kantin </h1>
+            <hr style="width: 5%; color: #01a465; border: 2px solid; padding-top: 0;">
+        </div>
+        <div class="booth">
+            <img src="booth1.jpg" alt="Booth 1 Image" class="booth-image">
+            <div class="booth-info">
+                <h2 style="color:#4CAF50">KANTIN BU GHIN</h2>
+                <div class="rating">
+                    ★★★★★ <span>5.0/5.0 (27)</span>
+                </div>
+                <p><i class="location-icon"></i> Gedung Kantin A, Nomor 2</p>
+            </div>
+            <div class="booth-status open">
+                <span>Open</span>
+        
+                <!-- Use an anchor tag to redirect when clicking on the Order Now button -->
+                <a href="menubooth1.html" class="order-now-link">
+                    <button class="order-now">Order Now</button>
+                </a>
+            </div>
+        </div>
+    
+        <div class="booth closed">
+            <img src="booth4.jpg" class="booth-image">
+            <div class="booth-info">
+                <h2 style="color:grey">KANTIN ARA</h2>
+                <div class="rating">
+                    ★★★★☆ <span style="color: gray;">4.5/5.0 (103)</span>
+                </div>
+                <p><i class="location-icon"></i> Gedung Kantin B, Nomor 5</p>
+            </div>
+            <div class="booth-status closed">
+                <span>Closed</span>
+                <button class="order-now disabled" disabled>Order Now</button>
+            </div>
+        </div>
+        
+        <div class="booth closed">
+            <img src="booth2.jpg" class="booth-image">
+            <div class="booth-info">
+                <h2 style="color:grey">KANTIN BU'DE</h2>
+                <div class="rating">
+                    ★★★★☆ <span style="color: gray;">4.5/5.0 (147)</span>
+                </div>
+                <p><i class="location-icon"></i> Gedung Kantin B, Nomor 2</p>
+            </div>
+            <div class="booth-status closed">
+                <span>Closed</span>
+                <button class="order-now disabled" disabled>Order Now</button>
+            </div>
+        </div>
+
+        <div class="booth">
+            <img src="booth5.jpg" alt="Booth 1 Image" class="booth-image">
+            <div class="booth-info">
+                <h2 style="color:#4CAF50">KANTIN CINDY</h2>
+                <div class="rating">
+                    ★★★★★ <span style="color: gray;">4.8/5.0 (19)</span>
+                </div>
+                <p><i class="location-icon"></i> Gedung Kantin A, Nomor 5</p>
+            </div>
+            <div class="booth-status open">
+                <span>Open</span>
+        
+                <!-- Use an anchor tag to redirect when clicking on the Order Now button -->
+                <a href="menubooth4.html" class="order-now-link">
+                    <button class="order-now">Order Now</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="booth">
+            <img src="booth3.jpg" alt="Booth 1 Image" class="booth-image">
+            <div class="booth-info">
+                <h2 style="color:#4CAF50">KANTIN PAK TRIS</h2>
+                <div class="rating">
+                    ★★★★★ <span>5.0/5.0 (57)</span>
+                </div>
+                <p><i class="location-icon"></i> Gedung Kantin A, Nomor 3</p>
+            </div>
+            <div class="booth-status open">
+                <span>Open</span>
+        
+                <!-- Use an anchor tag to redirect when clicking on the Order Now button -->
+                <a href="menubooth5.html" class="order-now-link">
+                    <button class="order-now">Order Now</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bagian About Us -->
+        <div id="about">
+            <br>
+            <h1 class="menu-nav"> About Us </h1>
+            <hr style="width: 5%; color: #01a465; border: 2px solid; padding-top: 0;">
+        </div>
+        
+        <article>
+            <div class="about-us">
+                <p style="font-size: 18px; line-height: 1.6; color: #666; text-align: center;">E-Canteen merupakan sebuah website khusus 
+                    yang dirancang untuk mahasiswa dan tenaga pendidikan UPNVJ 
+                    agar dapat memesan makanan minuman 
+                    dan mengakses berbagai informasi seputar kantin UPNVJ secara online.</p>
+            </div>
+         </article>
+    </body>
+
+    <footer>
+        <div class="footer-content">
+           <div class="footer-social">
+              <a href="#" class="social-icon"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="social-icon"><i class="bx bxl-whatsapp"></i></a>
+           </div>
+           <div class="footer-text">
+              <p>&copy; E-Canteen 2024 | All Rights Reserved</p>
+           </div>
+        </div>
+     </footer>
+</html>

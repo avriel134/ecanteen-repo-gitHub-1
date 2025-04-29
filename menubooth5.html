@@ -1,0 +1,708 @@
+<html>
+    <head>
+        <style>
+            *{
+                font-family: "Poppins", sans-serif;
+                scroll-behavior: smooth;
+            }
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                background-color: rgb(255, 255, 255);
+                position: fixed; 
+                left: 0;
+                top: 0; 
+                z-index: 100; 
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+                width: 100%;
+                padding: 10px 0;
+            }
+            .logo {
+                display: flex;
+                max-height: 90px;
+                padding-top: 5px;
+                padding-left: 5px;
+            }
+            .nav {
+                display: flex;
+
+                column-gap: 1.5rem;
+                li {
+                    list-style: none;
+                }
+            }
+            .nav a {
+                text-decoration: none;
+                color: #333;
+                margin: 0 10px;
+                font-size: 18px;
+                transition: color 0.3s ease;
+                white-space: nowrap;
+            }
+            .nav a:hover {
+                color: #01a465;
+                text-decoration: underline;
+            }
+            .user {
+                display: flex;
+                align-items: center;
+            }
+            .user img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                
+            }
+            .container .cart {
+                padding-left: 380px;
+                padding-right: 20px;
+            }
+            .cart{
+                margin-right: 15px;
+                padding: 0;
+            }
+            .cart img{
+                width: 30px;
+                height: 30px;
+            }
+            table{
+                border-collapse: collapse;
+                margin-top: 20px;
+                width: 100%;
+            }
+            td{
+                padding-left: 20px;
+            }
+            .container-recom{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                background-color: rgb(216, 216, 216);
+            }
+            .best-seller{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            }
+            .booth-section {
+                display: flex;
+                text-align: center;
+                margin: 20px;
+            }
+            .booth-section h2 {
+                font-size: 24px;
+                color: #333;
+            }
+            .booth-container {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-top: 20px;
+                margin-right: 45px;
+            }
+            .booth {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #fff;
+                border: 2px solid #ccc;
+                border-radius: 15px;
+                padding: 20px;
+                margin: 20px;
+                width: 92%;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                position: relative;
+            }
+            .booth-item {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                padding: 20px;
+                width: 92%;
+                height: 130px;
+                border-radius: 10px;
+            }
+            .booth-item img {
+                width: 200px;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 10px;
+                margin-right: 10px;
+            }
+            .booth-item p {
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 0px;
+                color: #333;
+            }
+            .closed {
+                background-color: #e0e0e0;
+                border-color: #aaa;
+            }
+
+            .booth-image {
+                width: 120px;
+                height: auto;
+            }
+
+            .booth-info {
+                flex: 1;
+                margin-left: 20px;
+                width: 92%;
+            }
+
+            .booth-info h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .rating {
+                color: #f5a623;
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .booth-info p {
+                font-size: 14px;
+                color: #333;
+            }
+
+            .booth-status {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            .booth-status span {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .open span {
+                color: green;
+            }
+
+            .closed span {
+                color: red;
+            }
+
+            .order-now {
+                background-color: green;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 25px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .order-now:hover {
+                background-color: #0b7d0b;
+            }
+
+            .order-now.disabled {
+                background-color: #aaa;
+                cursor: not-allowed;
+            }
+            .location-icon {
+                color: #FF0000; /* Red color for the icon */
+                font-size: 16px;
+                margin-right: 5px;
+                vertical-align: middle; /* Align icon with text */
+            }
+            .best-seller {
+                text-align: center;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                padding: 10px;
+                width: 150px;
+                border-radius: 10px;
+            }
+            .container-best {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                padding: 20px;
+                width: 92%;
+                height: 130px;
+                border-radius: 10px;
+            }
+            .category{
+                display: flex;
+                justify-content: space-around;
+            margin-top: 20px;
+            }
+            .category-section {
+                text-align: center;
+                margin: 20px;
+            }
+            .category-section h2 {
+                font-size: 24px;
+                color: #333;
+            }
+            .category-container {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-top: 20px;
+                margin-right: 45px;
+            }
+            .category{
+                display: flex;
+                justify-content: flex-start;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-top: 20px;
+                margin-left: 20px;
+            }
+            .category-item {
+                text-align: center;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                padding: 10px;
+                width: 150px;
+                border-radius: 10px;
+            }
+            .category-item img {
+                width: 100%;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+            .category-item p {
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 10px;
+                color: #333;
+            }
+            .menuBooth-container{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                border: 2px solid #ccc;
+                border-radius: 15px;
+                padding: 20px;
+                margin: 20px;
+                width: 92%;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                position: relative;
+            }
+            .menuBooth img {
+                width: 200px;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 10px;
+                margin-right: 10px;
+            }
+            .menuBooth p {
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 0px;
+                color: #333;
+            }
+            footer {
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                background-color: #fff;
+                padding: 10px 0;
+                border-top: 1px solid #ccc;
+                z-index: 100;
+            }
+            .footer-content {
+                max-width: 100%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0 2rem;
+            }
+            .footer-social {
+                display: flex;
+                justify-content: center;
+                gap: 1.7rem;
+                margin-bottom: 1rem;
+            }
+            .social-icon {
+                color: #4CAF50;
+                font-size: 1.7rem; 
+                transition: color 0.3s ease, transform 0.2s ease;
+            }
+            .social-icon:hover {
+                color: #f0f0f0;
+                transform: scale(1.1);
+            }
+            .footer-text {
+                text-align: center;
+                font-size: 0.8rem;
+            }
+            .about-us {
+                color: rgb(179, 177, 177);
+                text-align: center;
+                font-size: 0.8rem;
+            }
+            /* Dropdown pilih layanan booking */
+            .dropbtn {
+                background-color: #3498db;
+                color: white;
+                padding: 6px 12px;
+                border: none;
+                cursor: pointer;
+                border-radius: 8px;
+                }
+
+            .dropbtn:hover,
+            .dropbtn:focus {
+                background-color: #2980b9;
+                border-radius: 8px;
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown input {
+                margin: 8px 0;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                min-width: 220px;
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                padding: 20px;
+                border-radius: 8px;
+            }
+            .order-now-link {
+                text-decoration: none;
+            }
+
+            .order-now-link button {
+                background-color: green;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 25px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .order-now-link button:hover {
+                background-color: #0b7d0b;
+            }
+            .booth-header {
+                padding: 20px;
+                text-align: center;
+                border-radius: 15px;
+                margin: 20px;
+                position: relative;
+            }
+
+            .booth-rating {
+                position: absolute;
+                top: 15px;
+                left: 25px;
+            }
+
+            .stars {
+                font-size: 20px;
+                color: #f5a623;
+            }
+
+            .rating-score {
+                font-size: 14px;
+                color: #ffffff;
+                margin-left: 5px;
+            }
+
+            .header-image {
+                position: relative;
+                text-align: center;
+                color: white;
+                height: 100px;
+            }
+
+            .background {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .header-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 2em;
+                font-weight: bold;
+                background-color: #333;
+            }
+
+            .menu-section {
+                padding: 20px;
+            }
+
+            .menu-section h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .menu-item {
+                display: flex;
+                align-items: center;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 15px;
+                padding: 15px;
+                margin-bottom: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu-image {
+                width: 80px;
+                height: 80px;
+                border-radius: 10px;
+                margin-right: 20px;
+            }
+
+            .menu-details {
+                flex-grow: 1;
+            }
+
+            .menu-details h3 {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+
+            .menu-details p {
+                font-size: 14px;
+                color: #555;
+            }
+
+            .price {
+                font-weight: bold;
+                color: #333;
+            }
+            .add-to-cart {
+                background-color: #01a465;
+                color: #fff;
+                border: none;
+                border-radius: 50%;
+                font-size: 24px;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+            }
+
+            .add-to-cart:hover {
+                background-color: #028c56;
+            }
+            .show {
+                display: block;
+            }
+            .user {
+                padding-right: 15px;
+            }
+            .add-btn {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 10px;
+                border-radius: 50%;
+                font-size: 20px;
+                cursor: pointer;
+        }
+            .popup {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: #4caf4fda;
+                color: white;
+                padding: 15px;
+                border-radius: 5px;
+                z-index: 1000;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                font-size: 16px;
+            }
+        </style>
+        </head> 
+    
+        <body>
+        <script>
+        index.onclick = function (event) {
+            if (!event.target.matches(".dropbtn")) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                }
+            } 
+        };
+        </script>
+
+<div class="container">
+    <img src="logo e-canteen.png" alt="logo e-canteen" class="logo">
+
+    <ul class="nav">
+        <li><a href="index.html" style="color: #4CAF50;">index</a></li>|
+        <li><a href="#category">Category</a></li>|
+        <li><a href="#booth">Order</a></li>|
+        <li><a href="#about">About Us</a></li>
+    </ul>
+
+    <div class="cart">
+        <a href="keranjang.html">
+            <img src="https://cdn-icons-png.flaticon.com/128/2169/2169842.png" alt="keranjang" style="width: 30px;">
+        </a>
+    </div>
+    <div class="user">
+        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile">
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+        <div class="booth-header">
+            <div class="header-image">
+                <img src="booth5.jpg" alt="Background Image" class="background">
+                <div class="header-text">KANTIN PAK TRIS</div>
+             </div>
+             <br>
+             <div class="booth-rating">
+                <span class="stars">★★★★★</span> 
+                <span class="rating-score">5.0/5.0 (57)</span>
+            </div>
+        </div>
+    
+
+        <div class="menu-section">
+            <h2>SOTO DAN BAKSO</h2>
+            <div class="menu-item">
+                <img src="https://awsimages.detik.net.id/community/media/visual/2020/11/02/soto-mie-khas-bogor.jpeg?w=600&q=90" alt="Bakso" class="menu-image">
+                <div class="menu-details">
+                    <h3>Soto Mie</h3>
+                    <p>Semangkuk soto Mie Daging lengkap dengan potongan risol dan jeruk nipis</p>
+                    <p class="price">Rp. 14.000</p>
+                </div>
+                <button class="add-to-cart" onclick="addToCart('Nasi Goreng Ayam', 15000)">+</button>
+            </div>
+             <!-- Popup container (initially hidden) -->
+             <div id="popup" class="popup">
+                <p>Item berhasil ditambahkan ke keranjang!</p>
+            </div>
+    
+            <div class="menu-item">
+                <img src="https://asset-2.tstatic.net/tribunnews/foto/bank/images/bakso-sapi-kuah-1.jpg" alt="Bakso" class="menu-image">
+                <div class="menu-details">
+                    <h3>Bakso</h3>
+                    <p>Semangkuk bakso urat/telur lengkap dengan mie, bihun, dan sayuran</p>
+                    <p class="price">Rp. 19.000</p>
+                </div>
+                <button class="add-to-cart" onclick="addToCart('Nasi Goreng Ayam', 15000)">+</button>
+            </div>
+             <!-- Popup container (initially hidden) -->
+             <div id="popup" class="popup">
+                <p>Item berhasil ditambahkan ke keranjang!</p>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://static.promediateknologi.id/crop/5x171:1079x1747/750x500/webp/photo/p1/1005/2024/01/06/Screenshot_20240106_071239_Instagram-2591022563.jpg" alt="Soto Ayam" class="menu-image">
+                <div class="menu-details">
+                    <h3>Soto Ayam</h3>
+                    <p>Semangkuk soto ayam lengkap dengan potongan telur</p>
+                    <p class="price">Rp. 17.000</p>
+                </div>
+                <button class="add-to-cart" onclick="addToCart('Nasi Goreng Ayam', 15000)">+</button>
+            </div>
+             <!-- Popup container (initially hidden) -->
+             <div id="popup" class="popup">
+                <p>Item berhasil ditambahkan ke keranjang!</p>
+            </div>
+
+        <script>
+            // Function to add items to the cart
+            function addToCart(itemName, itemPrice) {
+                // Get the existing cart from localStorage or create a new one if empty
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+                // Add the new item to the cart
+                cart.push({
+                    name: itemName,
+                    price: itemPrice
+                });
+        
+                // Save the updated cart to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+        
+                // Redirect to the cart page (keranjang.html)
+                window.location.href = 'keranjang.html';
+            }
+        </script>
+       <script>
+        // Function to add items to the cart
+        function addToCart(itemName, itemPrice) {
+            // Get the existing cart from localStorage or create a new one if empty
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Add the new item to the cart
+            cart.push({
+                name: itemName,
+                price: itemPrice
+            });
+    
+            // Save the updated cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+    
+            // Show popup confirmation
+            showPopup();
+        }
+    
+        // Function to show the popup
+        function showPopup() {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'block'; // Show the popup
+    
+            // Hide the popup after 3 seconds
+            setTimeout(function() {
+                popup.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+    </body>
+    <footer>
+        <div class="footer-content">
+           <div class="footer-social">
+              <a href="#" class="social-icon"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="social-icon"><i class="bx bxl-whatsapp"></i></a>
+           </div>
+           <div class="footer-text">
+              <p>&copy; E-Canteen 2024 | All Rights Reserved</p>
+           </div>
+        </div>
+     </footer>
+</html>

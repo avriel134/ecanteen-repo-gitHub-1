@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Canteen</title>
+        <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body {
+            background-color: #f5f5f5;
+        }
+        </style>
+    </head>
+
+    <body>
+    <script>
+        // Fungsi untuk menampilkan alert saat menu diklik
+        function showAlert(menu) {
+        alert('Anda memilih: ' + menu);
+        }
+    </script>
+    
+    <!-- Header -->
+    <div class="container">
+        <a href="index.html#index" style="color: #4CAF50;"><img src="logo e-canteen.png" alt="logo e-canteen" class="logo"></a>
+    
+        <ul class="nav">
+            <li><a href="index.html#index" style="color: #4CAF50;">index</a></li>|
+            <li><a href="index.html#bestseller">Best Seller</a></li>|
+            <li><a href="index.html#category">Category</a></li>|
+            <li><a href="index.html#booth">Order</a></li>|
+            <li><a href="index.html#about">About Us</a></li>
+        </ul>
+    
+        <div class="cart">
+            <a href="keranjang.html">
+                <img src="https://cdn-icons-png.flaticon.com/128/2169/2169842.png" alt="keranjang" style="width: 30px;">
+            </a>
+        </div>
+    
+        <div class="user">
+            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile">
+        </div>
+    </div>
+    
+    <!-- Menu Section -->
+    <div class="menu-container">
+        <div>
+            <h1 class="menu-nav"> ENERGEN </h1>
+            <hr style="width: 5%; color: #01a465; border: 2px solid; text-align: end;">
+        </div>
+
+        <div class="menu-item" onclick="showAlert('Energen Coklat')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlMpjcS8E-i_R8dwFF77wZPObQszRk-rzP-Q&s" alt="Energen Coklat">
+            <div class="menu-info">
+                <h3>Energen Coklat</h3>
+                <p>Kantin Bu'de, Gedung Kantin A, Nomor 2</p>
+                <span class="price">Rp. 8.000</span>
+            </div>
+        </div>
+    
+        <div class="menu-item" onclick="showAlert('Energen Vanilla')">
+            <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2021/4/19/98d6b0e3-f16f-4a72-8441-c09cf130a5ce.jpg" alt="Energen Vanilla">
+            <div class="menu-info">
+                <h3>Energen Vanilla</h3>
+                <p>Kantin Cindy, Gedung Kantin B no 5</p>
+                <span class="price">Rp. 9.000</span>
+            </div>
+        </div>
+    
+        <div class="menu-item" onclick="showAlert('Energen Kurma')">
+            <img src="https://down-id.img.susercontent.com/file/id-11134207-7qul3-lhekbeljl19n41" alt="Energen Kurma">
+            <div class="menu-info">
+                <h3>Energen Kurma</h3>
+                <p>Kantin Pak Tris, Gedung Kantin A, Nomor 2</p>
+                <span class="price">Rp. 8.000</span>
+            </div>
+        </div>
+    
+        <div class="menu-item" onclick="showAlert('Energen Jahe')">
+            <img src="https://www.amanahhalalmart.com/82-large_default/energen-jahe-isi-10-sachet.jpg" alt="Energen Jahe">
+            <div class="menu-info">
+                <h3>Energen Jahe</h3>
+                <p>Kantin Cindy, Gedung Kantin B no 2</p>
+                <span class="price">Rp. 9.000</span>
+            </div>
+        </div>
+    
+        <div class="menu-item" onclick="showAlert('Energen Kacang Hijau')">
+            <img src="https://kliktobuy.com/wp-content/uploads/2017/07/WhatsApp-Image-2021-12-04-at-11.03.18.jpeg" alt="Energen Kacang Hijau">
+            <div class="menu-info">
+                <h3>Energen Kacang Hijau</h3>
+                <p>Kantin Bu'de, Gedung Kantin B no 2</p>
+                <span class="price">Rp. 8.000</span>
+            </div>
+        </div>
+    
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-social">
+            <a href="#" class="social-icon"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="bx bxl-whatsapp"></i></a>
+            </div>
+            <div class="footer-text">
+            <p>&copy; E-Canteen 2024 | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    </body>
+</html>

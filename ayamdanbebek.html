@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Canteen</title>
+        <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        
+        <style>
+            body {
+                background-color: #f5f5f5;
+            }
+        </style>
+    </head>
+
+    <body>
+        <script>
+            // Fungsi untuk menampilkan alert saat menu diklik
+            function showAlert(menu) {
+            alert('Anda memilih: ' + menu);
+            }
+        </script>
+
+        <!-- Header -->
+        <div class="container">
+            <a href="index.html#index" style="color: #4CAF50;"><img src="logo e-canteen.png" alt="logo e-canteen" class="logo"></a>
+
+            <ul class="nav">
+                <li><a href="index.html#index" style="color: #4CAF50;">index</a></li>|
+                <li><a href="index.html#bestseller">Best Seller</a></li>|
+                <li><a href="index.html#category">Category</a></li>|
+                <li><a href="index.html#booth">Order</a></li>|
+                <li><a href="index.html#about">About Us</a></li>
+            </ul>
+
+            <div class="cart">
+                <a href="keranjang.html">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2169/2169842.png" alt="keranjang" style="width: 30px;">
+                </a>
+            </div>
+
+            <div class="user">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile">
+            </div>
+        </div>
+        
+        <!-- Menu Section -->
+        <div class="menu-container">
+            <div>
+                <h1 class="menu-nav"> AYAM DAN BEBEK </h1>
+                <hr style="width: 5%; color: #01a465; border: 2px solid; text-align: end;">
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Ayam Goreng Kremes')">
+                <img src="https://dcostseafood.id/wp-content/uploads/2024/07/Nasi-ayam-goreng-kremes.jpg" alt="Ayam Goreng Kremes">
+                <div class="menu-info">
+                    <h3>Ayam Goreng Kremes</h3>
+                    <p>Kantin Cindy, Gedung Kantin A, Nomor 2</p>
+                    <span class="price">Rp. 15.000</span>
+                </div>
+            </div>
+          
+            <div class="menu-item" onclick="showAlert('Ayam Goreng Lengkuas')">
+                <img src="https://akcdn.detik.net.id/visual/2023/06/07/ilustrasi-ayam-serundeng_169.jpeg?w=650" alt="Ayam Goreng Lengkuas">
+                <div class="menu-info">
+                    <h3>Ayam Goreng Lengkuas</h3>
+                    <p>Kantin Ara, Gedung Kantin B no 5</p>
+                    <span class="price">Rp. 17.000</span>
+                </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Ayam Goreng Mentega')">
+                <img src="https://foto.kontan.co.id/r_DDsYXOjzyavBwAb-tdR4BaHjM=/smart/2022/02/09/492935819p.jpg" alt="Ayam Goreng Mentega">
+                <div class="menu-info">
+                    <h3>Ayam Goreng Mentega</h3>
+                    <p>Kantin Pak Tris, Gedung Kantin A, Nomor 2</p>
+                    <span class="price">Rp. 17.000</span>
+                </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Ayam Geprek')">
+                <img src="https://minyakgorengsunco.com/wp-content/uploads/2024/04/ayam-geprek-2.jpg" alt="Ayam Geprek">
+                <div class="menu-info">
+                    <h3>Ayam Geprek</h3>
+                    <p>Kantin Bu'de, Gedung Kantin B no 2</p>
+                    <span class="price">Rp. 15.000</span>
+                </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Bebek Madura')">
+                <img src="https://asset.kompas.com/crops/WhmmF0b4678whQdBKddOYHmhxXU=/21x0:989x645/750x500/data/photo/2023/02/23/63f6e1fa4a0fa.jpeg" alt="Bebek Madura">
+                <div class="menu-info">
+                    <h3>Bebek Madura</h3>
+                    <p>Kantin Bu'de, Gedung Kantin B no 2</p>
+                    <span class="price">Rp. 20.000</span>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="bx bxl-whatsapp"></i></a>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; E-Canteen 2024 | All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

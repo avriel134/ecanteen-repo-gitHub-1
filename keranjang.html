@@ -1,0 +1,562 @@
+<html> 
+    <head>
+        <title>E-Canteen</title>
+        <style>
+             *{
+                font-family: "Poppins", sans-serif;
+                scroll-behavior: smooth;
+            }
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: rgb(255, 255, 255);
+                position: sticky; /* Makes the container sticky */
+                left: 0;
+                top: 0; /* Position it at the top */
+                z-index: 100; /* Ensures it's above other content */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow */
+                width: 100%;
+                overflow-x: hidden;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .logo {
+                display: flex;
+                max-height: 90px;
+                padding-top: 5px;
+                padding-left: 5px;
+            }
+            .nav {
+                display: flex;
+                column-gap: 1.5rem;
+                li {
+                    list-style: none;
+                }
+            }
+            .nav a {
+                text-decoration: none;
+                color: #333;
+                margin: 0 10px;
+                font-size: 18px;
+                transition: color 0.3s ease;
+                white-space: nowrap;
+            }
+            .nav a:hover /*, .navbar .active*/ {
+                color: #01a465;
+                text-decoration: underline;
+            }
+            .user {
+                display: flex;
+                align-items: center;
+            }
+            .user img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+            .search-cart{
+                display: flex;
+                justify-content: flex-end;
+                margin-right: 5px;
+            }
+            #search-icon {
+                font-size: 24;
+                cursor: pointer;
+                color:#01a465;
+            }
+            .search-box{
+                background-color: white;
+                box-shadow: 4px 4px 20px rgb(15 54 55 / 10%);
+                border: 2px;
+                border-radius: 0.5rem;
+                clip-path: circle(0% at 100% 0%);
+            }
+            .search-box.active {
+                clip-path: circle(144% at 100% 0%);
+                transition: 0.4s;
+            }
+            .search-box input{
+                padding: 5px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                height: 30px;
+                width: 250px
+            }
+            .cart{
+                margin-left: 20px;
+                padding: 0;
+            }
+            .cart img{
+                width: 30px;
+                height: 30px;
+            }
+            .banner{
+                background: url("")
+            }
+            table{
+                border-collapse: collapse;
+                margin-top: 20px;
+                width: 100%;
+            }
+            td{
+                padding-left: 20px;
+            }
+            .container-recom{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                background-color: rgb(216, 216, 216);
+            }
+            .best-seller{
+                display: flex;
+                justify-content: space-around;
+                margin-top: 20px;
+            }
+            .booth-section {
+                display: flex;
+                text-align: center;
+                margin: 20px;
+            }
+            .booth-section h2 {
+                font-size: 24px;
+                color: #333;
+            }
+            .booth-container {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-top: 20px;
+                margin-right: 45px;
+            }
+            .booth {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #fff;
+                border: 2px solid #ccc;
+                border-radius: 15px;
+                padding: 20px;
+                margin: 20px;
+                width: 92%;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                position: relative;
+            }
+            .booth-item {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                padding: 20px;
+                width: 92%;
+                height: 130px;
+                border-radius: 10px;
+            }
+            .booth-item img {
+                width: 200px;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 10px;
+                margin-right: 10px;
+            }
+            .booth-item p {
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 0px;
+                color: #333;
+            }
+            .closed {
+                background-color: #e0e0e0;
+                border-color: #aaa;
+            }
+
+            .booth-image {
+                width: 120px;
+                height: auto;
+            }
+
+            .booth-info {
+                flex: 1;
+                margin-left: 20px;
+                width: 92%;
+            }
+
+            .booth-info h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .rating {
+                color: #f5a623;
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .booth-info p {
+                font-size: 14px;
+                color: #333;
+            }
+
+            .booth-status {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            .booth-status span {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .open span {
+                color: green;
+            }
+
+            .closed span {
+                color: red;
+            }
+
+            .order-now {
+                background-color: green;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 25px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .order-now:hover {
+                background-color: #0b7d0b;
+            }
+
+            .order-now.disabled {
+                background-color: #aaa;
+                cursor: not-allowed;
+            }
+            .location-icon {
+                color: #FF0000; /* Red color for the icon */
+                font-size: 16px;
+                margin-right: 5px;
+                vertical-align: middle; /* Align icon with text */
+            }
+            .best-seller {
+                text-align: center;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                padding: 10px;
+                width: 150px;
+                border-radius: 10px;
+            }
+            .container-best {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                padding: 20px;
+                width: 92%;
+                height: 130px;
+                border-radius: 10px;
+            }
+            .category{
+                display: flex;
+                justify-content: space-around;
+            margin-top: 20px;
+            }
+            .category-section {
+                text-align: center;
+                margin: 20px;
+            }
+            .category-section h2 {
+                font-size: 24px;
+                color: #333;
+            }
+            .category-container {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-top: 20px;
+                margin-right: 45px;
+            }
+            .category{
+                display: flex;
+                justify-content: flex-start;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-top: 20px;
+                margin-left: 20px;
+            }
+            .category-item {
+                text-align: center;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                padding: 10px;
+                width: 150px;
+                border-radius: 10px;
+            }
+            .category-item img {
+                width: 100%;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+            .category-item p {
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 10px;
+                color: #333;
+            }
+            
+            footer {
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                background-color: #fff;
+                padding: 10px 0;
+                border-top: 1px solid #ccc;
+                z-index: 100;
+            }
+            .footer-content {
+                max-width: 100%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0 2rem;
+            }
+            .footer-social {
+                display: flex;
+                justify-content: center;
+                gap: 1.7rem;
+                margin-bottom: 1rem;
+            }
+            .social-icon {
+                color: #4CAF50;
+                font-size: 1.7rem; 
+                transition: color 0.3s ease, transform 0.2s ease;
+            }
+            .social-icon:hover {
+                color: #f0f0f0;
+                transform: scale(1.1);
+            }
+            .footer-text {
+                text-align: center;
+                font-size: 0.8rem;
+            }
+            .about-us {
+                color: rgb(179, 177, 177);
+                text-align: center;
+                font-size: 0.8rem;
+            }
+            /* Dropdown pilih layanan booking */
+            .dropbtn {
+            background-color: #3498db;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            }
+
+            .dropbtn:hover,
+            .dropbtn:focus {
+            background-color: #2980b9;
+            border-radius: 8px;
+            }
+
+            .dropdown {
+            position: relative;
+            display: inline-block;
+            }
+
+            .dropdown input {
+            margin: 8px 0;
+            }
+
+            .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 220px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            padding: 20px;
+            border-radius: 8px;
+            }
+            .order-now-link {
+                text-decoration: none;
+            }
+
+            .order-now-link button {
+                background-color: green;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 25px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .order-now-link button:hover {
+                background-color: #0b7d0b;
+            }
+            .show {
+            display: block;
+            }
+
+            .user {
+                padding-right: 15px;
+            }
+            .logo h1 {
+                margin: 0;
+                font-size: 24px;
+                font-weight: bold;
+                color: #4CAF50;
+
+            }
+            .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item h3 {
+            margin: 0;
+        }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+        .quantity-controls button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        </style>
+    </head>
+    
+    <body>
+    </script>
+    <nav>
+        <div class="container">
+            <img src="logo e-canteen.png" alt="logo e-canteen" class="logo">
+
+            <ul class="nav">
+                <li><a href="index.html" style="color: #4CAF50;">index</a></li>|
+                <li><a href="#category">Category</a></li>|
+                <li><a href="#booth">Booth</a></li>|
+                <li><a href="#about">About Us</a></li>
+            </ul>
+
+            <i class="bx bx-search" id="search-icon"></i>
+            <div class="search-box" style="display: flex; align-items: center; justify-content: space-between;">
+                    <input type="search" placeholder="Search...">
+            </div>
+            <div class="cart" style="margin-left: 5px;">
+                <a href="keranjang.html">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2169/2169842.png" alt="keranjang" style="width: 30px;">
+                    <span id="cart-count" style="position: absolute; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 14px; top: -5px; right: -10px; display: none;"></span>
+                </a>
+            </div>            
+            <div class="user">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile">
+            </div>
+        </div>
+    </nav>
+    <!-- <h1>Keranjang Belanja</h1>
+    <div id="cart-items">
+        Items in the cart will be displayed here
+    </div> -->
+
+    <h1>Keranjang Belanja</h1>
+    <div id="cart-items">
+        <!-- Items in the cart will be displayed here -->
+    </div>
+    <div id="total-cost">
+        <h3>Total Cost: <span id="total-amount">0</span> IDR</h3>
+    </div>
+
+    
+
+    <script>
+        // Fungsi untuk menampilkan item di keranjang
+        function displayCartItems() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            cartItemsDiv.innerHTML = ''; // Bersihkan div
+
+            // Ambil keranjang dari localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let totalCost = 0; // Initialize total cost
+
+            // Tampilkan setiap item dalam keranjang
+            cart.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+                itemDiv.innerHTML = `
+                    <h3>${item.name}</h3>
+                    <p>Harga: ${item.price} IDR</p>
+                    <div class="quantity-controls">
+                        <button onclick="updateQuantity(${index}, 'decrease')">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="updateQuantity(${index}, 'increase')">+</button>
+                    </div>
+                    <button onclick="removeFromCart(${index})">Hapus</button>
+                `;
+                cartItemsDiv.appendChild(itemDiv);
+
+                // Update total cost
+                totalCost += item.price * item.quantity;
+            });
+
+            // Update total cost display
+            document.getElementById('total-amount').textContent = totalCost;
+        }
+
+        // Fungsi untuk memperbarui jumlah item dalam keranjang
+        function updateQuantity(index, action) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (action === 'increase') {
+                cart[index].quantity++;
+            } else if (action === 'decrease' && cart[index].quantity > 1) {
+                cart[index].quantity--;
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCartItems(); // Tampilkan kembali item keranjang
+            updateCartCount(); // Update the cart count display
+        }
+
+    </script>
+
+ </body>
+ <footer>
+    <div class="footer-content">
+       <div class="footer-social">
+          <a href="#" class="social-icon"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="bx bxl-whatsapp"></i></a>
+       </div>
+       <div class="footer-text">
+          <p>&copy; E-Canteen 2024 | All Rights Reserved</p>
+       </div>
+    </div>
+ </footer>
+    </html>

@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Canteen</title>
+        <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        
+        <style>
+            body {
+                background-color: #f5f5f5;
+            }
+        </style>
+    </head>
+
+    <body>
+        <script>
+            // Fungsi untuk menampilkan alert saat menu diklik
+            function showAlert(menu) {
+            alert('Anda memilih: ' + menu);
+            }
+        </script>
+
+        <!-- Header -->
+        <div class="container">
+            <a href="index.html#index" style="color: #4CAF50;"><img src="logo e-canteen.png" alt="logo e-canteen" class="logo"></a>
+
+            <ul class="nav">
+                <li><a href="index.html#index" style="color: #4CAF50;">index</a></li>|
+                <li><a href="index.html#bestseller">Best Seller</a></li>|
+                <li><a href="index.html#category">Category</a></li>|
+                <li><a href="index.html#booth">Order</a></li>|
+                <li><a href="index.html#about">About Us</a></li>
+            </ul>
+
+            <div class="cart">
+                <a href="keranjang.html">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2169/2169842.png" alt="keranjang" style="width: 30px;">
+                </a>
+            </div>
+
+            <div class="user">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile">
+            </div>
+        </div>
+        
+        <!-- Menu Section -->
+        <div class="menu-container">
+            <div>
+                <h1 class="menu-nav"> SNACK </h1>
+                <hr style="width: 5%; color: #01a465; border: 2px solid; text-align: end;">
+            </div>
+
+            <div class="menu-item" onclick="showAlert('Risol Mayo')">
+                <img src="https://shopee.co.id/inspirasi-shopee/wp-content/uploads/2021/06/ezgif.com-gif-maker-1.webp" alt="Risol Mayo">
+                <div class="menu-info">
+                    <h3>Risol Mayo</h3>
+                    <p>Kantin Ara, Gedung Kantin A, Nomor 2</p>
+                    <span class="price">Rp. 3.000</span>
+                </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Martabak Tahu')">
+                <img src="https://img.kurio.network/8SMAySbaB3wOPUnm60Eg9DqSpJM=/1200x900/filters:quality(80)/https://kurio-img.kurioapps.com/21/08/20/b51d0564-f5d8-4bc9-b722-4c649319974d.jpe" alt="Martabak Tahu">
+                <div class="menu-info">
+                    <h3>Martabak Tahu</h3>
+                    <p>Kantin Bu'de, Gedung Kantin B no 5</p>
+                    <span class="price">Rp. 2.500</span>
+                </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Donat Gula')">
+                <img src="https://asset-a.grid.id/crop/0x0:0x0/x/photo/2020/07/07/2350028660.jpg" alt="Donat Gula">
+                <div class="menu-info">
+                    <h3>Donat Gula</h3>
+                    <p>Kantin Ara, Gedung Kantin A, Nomor 2</p>
+                    <span class="price">Rp. 2.000</span>
+                </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Sosis Solo')">
+                <img src="https://down-id.img.susercontent.com/file/efd093d232a6b769124855b120433e9c" alt="Sosis Solo">
+                <div class="menu-info">
+                    <h3> Sosis Solo</h3>
+                    <p>Kantin Cindy, Gedung Kantin B no 2</p>
+                    <span class="price">Rp. 2.500</span>
+                </div>
+            </div>
+        
+            <div class="menu-item" onclick="showAlert('Pastel')">
+                <img src="https://cdn1-production-images-kly.akamaized.net/ovBDZzXugiHtiIpcMtsHbOhL-Ok=/1200x1200/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2338162/original/030676300_1534997231-tupperware_dot_co_dot_id.jpg" alt="Pastel">
+                <div class="menu-info">
+                    <h3> Pastel</h3>
+                    <p>Kantin Bu'de, Gedung Kantin B no 2</p>
+                    <span class="price">Rp. 3.000</span>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="bx bxl-whatsapp"></i></a>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; E-Canteen 2024 | All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
